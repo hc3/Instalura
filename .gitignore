@@ -1,0 +1,21 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+instalura/node_modules
+
+# testing
+instalura/coverage
+
+# production
+instalura/build
+
+# misc
+instalura/.DS_Store
+instalura/.env.local
+instalura/.env.development.local
+instalura/.env.test.local
+instalura/.env.production.local
+
+instalura/npm-debug.log*
+instalura/yarn-debug.log*
+instalura/yarn-error.log*
