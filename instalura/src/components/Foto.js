@@ -8,7 +8,7 @@ class FotoHeader extends Component {
         <figure className="foto-usuario">
           <img src={this.props.foto.urlPerfil} alt="foto do usuario" />
           <figcaption className="foto-usuario">
-            <a href="#">
+            <a href="">
               {this.props.foto.loginUsuario}
             </a>
           </figcaption>
@@ -26,7 +26,7 @@ class FotoInfo extends Component {
             <div className="foto-info-likes">
             {
               this.props.foto.likers.map(liker => {
-                return (<a key={liker.login} href="#">{liker.login},</a>)
+                return (<a key={liker.login} href="">{liker.login},</a>)
               })
             }
             curtiram
@@ -61,7 +61,7 @@ class FotoAtualizacoes extends Component {
   render(){
     return(
       <section className="fotoAtualizacoes">
-        <a href="#" className="fotoAtualizacoes-like">Likar</a>
+        <a href="" className="fotoAtualizacoes-like">Likar</a>
         <form className="fotoAtualizacoes-form">
           <input type="text" placeholder="Adicione um comentário..." className="fotoAtualizacoes-form-campo"/>
           <input type="submit" value="Comentar!" className="fotoAtualizacoes-form-submit"/>
