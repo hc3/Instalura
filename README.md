@@ -1,4 +1,4 @@
 # Instalura
 aplicação tipo instagram, desenvolvida na curso de react da allura
 
-4.3
+5.1

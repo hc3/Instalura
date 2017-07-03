@@ -3,17 +3,18 @@ import FotoItem from './Foto';
 
 export default class Timeline extends Component {
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {fotos:[]};
+    this.login = this.props.login;
   }
 
-  carregaFotos(props) {
+  carregaFotos() {
     let urlPerfil;
-    if(props.login === undefined) {
+    if(this.login === undefined) {
       urlPerfil = `http://localhost:8080/api/fotos?X-AUTH-TOKEN=${localStorage.getItem('auth-token')}`;
     } else {
-      urlPerfil = `http://localhost:8080/api/public/fotos/${props.login}`
+      urlPerfil = `http://localhost:8080/api/public/fotos/${this.login}`
     }
 
     fetch(urlPerfil)
@@ -24,12 +25,13 @@ export default class Timeline extends Component {
   }
 
   componentDidMount() {
-    this.carregaFotos(this.props);
+    this.carregaFotos();
   }
 
   componentWillReceiveProps(nextProps) {
     if(nextProps.login !== undefined) {
-      this.carregaFotos(nextProps);
+      this.login = nextProps.login;
+      this.carregaFotos();
     }
   }
 
